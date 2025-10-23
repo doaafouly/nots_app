@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:not_app/views/nots_views.dart';
 import 'package:not_app/widgets/notes_view_body.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class NotesApp extends StatelessWidget {
         fontFamily: 'Poppins', // ✅ correct property name
       ),
       home: Scaffold(
-        body: NotesViewBody(),
+        body: NotsViews(),
         // Center(
         //   child: Text("Hello Notes App!", style: TextStyle(fontSize: 24)
         // ),

@@ -8,10 +8,26 @@ class NotsViews extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) {
+              return AddShowButtonSheet();
+            },
+          );
+        },
         child: Icon(Icons.add),
       ),
       body: NotesViewBody(),
     );
+  }
+}
+
+class AddShowButtonSheet extends StatelessWidget {
+  const AddShowButtonSheet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
