@@ -9,14 +9,15 @@ class NotesViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Expanded(
-        child: Column(
-          children: const [
-            SizedBox(height: 50),
-            CustomAppBar(),
-            NotesListView(),
-          ],
-        ),
+      child: Column(
+        children: const [
+          SizedBox(height: 50),
+          CustomAppBar(title: 'Notes ', icon: Icons.search),
+          SizedBox(height: 20),
+          Expanded(
+            child: NotesListView(), // ✅ نضيف ListView للـ Notes
+          ),
+        ],
       ),
     );
   }
@@ -27,15 +28,14 @@ class NotesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16),
-
-      child: ListView.builder(
-        padding: EdgeInsets.zero,
-        itemBuilder: (context, index) {
-          return Padding(padding: const EdgeInsets.all(16), child: NotItem());
-        },
-      ),
+    return ListView.builder(
+      itemCount: 8, // عدد النوتس اللي هتظهر مؤقتًا
+      itemBuilder: (context, index) {
+        return const Padding(
+          padding: EdgeInsets.symmetric(vertical: 8.0),
+          child: NotItem(),
+        );
+      },
     );
   }
 }
