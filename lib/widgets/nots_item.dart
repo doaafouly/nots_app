@@ -10,11 +10,7 @@ class NotItem extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(
-            builder: (context) {
-              return EditNotesViews();
-            },
-          ),
+          MaterialPageRoute(builder: (context) => const EditNotesViews()),
         );
       },
       child: Container(
